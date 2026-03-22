@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>WebDesign Helper</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+
+  <div class="section">
+    <h2>表示設定</h2>
+    <label>
+      <input type="checkbox" id="toggle-dark">
+      ダークモード
+    </label>
+  </div>
+
+  <div class="section">
+    <h2>選択中の要素</h2>
+    <p id="element-tag">要素：なし</p>
+    <p id="element-text">テキスト：なし</p>
+  </div>
+
+  <div class="section">
+    <h2>スタイル編集</h2>
+
+    <label>フォント</label>
+    <select id="fontFamily">
+      <option value="">変更しない</option>
+      <option value="system-ui">システム標準</option>
+      <option value="sans-serif">ゴシック体</option>
+      <option value="serif">明朝体</option>
+      <option value="monospace">等幅</option>
+    </select>
+
+    <label>文字の色</label>
+    <input type="color" id="colorPicker">
+
+    <label>背景の色</label>
+    <input type="color" id="bgColorPicker">
+
+    <label>文字の大きさ</label>
+    <input type="number" id="fontSize" min="8" max="72"> px
+
+    <label>内側の余白</label>
+    <input type="number" id="padding" min="0" max="100"> px
+
+    <label>外側の余白</label>
+    <input type="number" id="margin" min="0" max="100"> px
+
+    <label>角の丸み</label>
+    <input type="number" id="radius" min="0" max="100"> px
+  </div>
+
+  <div class="section">
+    <h2>プリセット</h2>
+
+    <div class="preset-block">
+      <button class="preset" data-type="readable">見やすい文字</button>
+      <div class="preset-preview" id="preview-readable"></div>
+    </div>
+
+    <div class="preset-block">
+      <button class="preset" data-type="button">ボタン風</button>
+      <div class="preset-preview" id="preview-button"></div>
+    </div>
+
+    <div class="preset-block">
+      <button class="preset" data-type="card">カード</button>
+      <div class="preset-preview" id="preview-card"></div>
+    </div>
+
+    <div class="preset-block">
+      <button class="preset" data-type="shadow">影をつける</button>
+      <div class="preset-preview" id="preview-shadow"></div>
+    </div>
+
+    <div class="preset-block">
+      <button class="preset" data-type="highlight">強調</button>
+      <div class="preset-preview" id="preview-highlight"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>保存したプリセット</h2>
+    <div id="saved-presets"></div>
+    <button id="save-preset">現在のスタイルを保存</button>
+  </div>
+
+  <div class="section">
+    <h2>CSSコード</h2>
+    <button id="export-css">CSSを表示</button>
+    <pre id="css-output"></pre>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{
+  "manifest_version": 3,
+  "name": "WebDesign Helper",
+  "version": "1.0",
+  "description": "初心者でも簡単にウェブページのデザインを編集できるツールです。",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "reoreoxz616@gmail.com",
+      "data_collection_permissions": {
+        "collects_data": false,
+        "required": ["none"]
+      }
+    }
+  },
+
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+
+  "action": {
+    "default_title": "WebDesign Helper",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png"
+    }
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ],
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidebar.html",
+        "sidebar.css",
+        "sidebar.js"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
